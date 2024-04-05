@@ -14,15 +14,12 @@ function renderPlayerNames() {
 // Call the function when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", renderPlayerNames);
 
+// Function to toggle visibility of Challenge 1 section
 function toggleChallenge1Section() {
     const challenge1Section = document.getElementById("challenge1");
     if (challenge1Section) {
         // Toggle the display style of the section
-        if (challenge1Section.style.display === "none") {
-            challenge1Section.style.display = "block";
-        } else {
-            challenge1Section.style.display = "none";
-        }
+        challenge1Section.style.display = challenge1Section.style.display === "none" ? "block" : "none";
     }
 }
 
