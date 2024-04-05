@@ -1,17 +1,22 @@
 import { Player, arr1 } from "./player";
 
+function generateNames(names: Player[]) {
+    let items = "";
+    for (let i = 0; i < names.length; i++) {
+        items += '<p>' + names[i].firstName + ' ' + names[i].lastName + '</p>';
+    }
+    return items;
+}
+
+// Function to render player names into the playerNamesContainer
 function renderPlayerNames() {
     const playerNamesContainer = document.getElementById("playerNames");
     if (playerNamesContainer) {
-        arr1.forEach(player => {
-            const playerNameElement = document.createElement("p");
-            playerNameElement.textContent = `${player.firstName} ${player.lastName}`;
-            playerNamesContainer.appendChild(playerNameElement);
-        });
+        playerNamesContainer.innerHTML = generateNames(arr1);
     }
 }
 
-// Call the function when the DOM content is loaded
+// Call the renderPlayerNames function when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", renderPlayerNames);
 
 // Function to toggle visibility of Challenge 1 section
